@@ -34,7 +34,7 @@ public class MulticastPeer {
       for(int i = 0; i < 3; i++) {
         DatagramPacket msgIn = new DatagramPacket(buffer, buffer.length);
         mPeer.receive(msgIn);
-        System.out.println("Received: " + new String(msgIn.getData()) + ", from: " + msgIn.getAddress());
+        System.out.println("Received: " + new String(msgIn.getData()));
       }
       mPeer.leaveGroup(mcast);
     } catch(SocketException e) {
