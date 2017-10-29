@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+jar {
+  from {
+    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile group: 'net.sf.jopt-simple', name: 'jopt-simple', version: '4.9'
+}
